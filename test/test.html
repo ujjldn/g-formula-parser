@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formula Parser Test Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Formula Parser Test Tool</h1>
+  <input type="text" id="formulaInput" placeholder="Enter formula (e.g., A1+B1)" value="SUMIF([123,790],'>')">
+  <button onclick="parseFormula()">Parse Formula</button>
+  <div id="result"></div>
+
+  <script src="../dist/formula-parser.js"></script>
+  <script>
+    function parseFormula() {
+      const formulaInput = document.getElementById('formulaInput').value;
+      const resultDiv = document.getElementById('result');
+
+      try {
+        // Assuming formulaParser is the global object exposed by formula-parser.js
+        const parser = new formulaParser.Parser();
+        const result = parser.parse(formulaInput);
+        console.log(parser,parser.parse);
+        resultDiv.textContent = JSON.stringify(result, null, 2);
+      } catch (error) {
+        resultDiv.textContent = JSON.stringify(result, null, 2);
+      }
+    }
+  </script>
+</body>
+</html>
