@@ -26,7 +26,8 @@
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack",
     "generate-parser": "cd src/grammar-parser && jison grammar-parser.jison",
     "release": "generate-release",
-    "postbuild": "node ./scripts/prepare-package"
+    "postbuild": "node ./scripts/prepare-package",
+    "qb": "npm run generate-parser && npm run build:umd"
   },
   "repository": {
     "type": "git",
@@ -66,6 +67,7 @@
   },
   "dependencies": {
     "@handsontable/formulajs": "^2.0.2",
+    "babel-eslint": "^10.1.0",
     "tiny-emitter": "^2.1.0"
   },
   "jest": {

@@ -74,6 +74,13 @@ parser.parse('SUM(MY_VAR)'); // returns `Object {error: "#NAME?", result: null}`
 parser.parse('1;;1'); // returns `Object {error: "#ERROR!", result: null}`
 ```
 
+###  .parse(expression)  new by FYCDC-Germ  20250418
+```js
+parser.parse("SUMIF([1,2,3,4,5],'>2')");
+parser.parse("AVERAGE([[1,2,3,4,5],[1,2,3,4]])");
+```
+
+
 ### .setVariable(name, value)
 
 Set predefined variable name which can be visible while parsing formula expression.

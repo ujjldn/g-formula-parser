@@ -71,7 +71,7 @@
     recoverable: (boolean: TRUE when the parser has a error recovery rule available for this particular error)
   }
 */
-var grammarParser = (function(){
+var test = (function(){
 var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,5],$V1=[1,8],$V2=[1,6],$V3=[1,7],$V4=[1,9],$V5=[1,14],$V6=[1,15],$V7=[1,16],$V8=[1,12],$V9=[1,13],$Va=[1,17],$Vb=[1,19],$Vc=[1,20],$Vd=[1,21],$Ve=[1,22],$Vf=[1,23],$Vg=[1,24],$Vh=[1,25],$Vi=[1,26],$Vj=[1,27],$Vk=[1,28],$Vl=[5,9,10,11,13,14,15,16,17,18,19,20,29,30],$Vm=[5,9,10,11,13,14,15,16,17,18,19,20,29,30,32],$Vn=[5,9,10,11,13,14,15,16,17,18,19,20,29,30,34],$Vo=[5,10,11,13,14,15,16,17,29,30],$Vp=[5,10,13,14,15,16,29,30],$Vq=[5,10,11,13,14,15,16,17,18,19,29,30],$Vr=[13,29,30];
 var parser = {trace: function trace () { },
 yy: {},
@@ -222,7 +222,8 @@ case 38: case 42:
 break;
 case 39:
 
-      this.$ = [JSON.parse(yytext)];  // this.$ = yy.trimEdges(yytext).split(',');
+    console.log(yytext);
+      this.$ = yy.trimEdges(yytext).split(',');
     
 break;
 case 40: case 41:
@@ -928,9 +929,9 @@ return new Parser;
 
 
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
-exports.parser = grammarParser;
-exports.Parser = grammarParser.Parser;
-exports.parse = function () { return grammarParser.parse.apply(grammarParser, arguments); };
+exports.parser = test;
+exports.Parser = test.Parser;
+exports.parse = function () { return test.parse.apply(test, arguments); };
 exports.main = function commonjsMain (args) {
     if (!args[1]) {
         console.log('Usage: '+args[0]+' FILE');

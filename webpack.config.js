@@ -36,7 +36,10 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
     })
-  ]
+  ],
+  node:{
+    fs: 'empty'
+  }
 };
 
 module.exports = config;
